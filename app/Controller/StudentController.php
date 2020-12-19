@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Repositories\StudentRepository;
+use App\Services\StudentService;
 
 /**
  * Class StudentController
@@ -15,22 +16,38 @@ class StudentController extends Controller
      */
     private StudentRepository $studentRepository;
 
- 
+
     public function __construct(StudentRepository $studentRepository)
     {
         $this->studentRepository = $studentRepository;
     }
 
-  
+    /**
+     *  Retuns list of students
+     */
     public function index()
     {
         $students = $this->studentRepository->getStudents();
 
         try {
-            $this->createView('students', $students);
+           return $this->createView('students', $students);
         } catch (\Exception $exception) {
-            throw new Exception("Can not get students");
+            throw new Exception("Can't get all students");
         }
     }
 
+    /**
+     * Returns single student
+     */
+    public function getStudent(int $studentId, StudentService $studentService)
+    {
+        try {
+            $studentData = $studentService->getStudent($studentId);
+            return $this->createView('student_single', $studentData);
+        } catch (\Exception $exception) {
+            throw new Exception("Can't get student");
+        }
+
+       
+    }
 }
