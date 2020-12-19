@@ -1,0 +1,13 @@
+{
+    "name": "s/quantox.test",
+    "authors": [{
+        "name": "sloba82",
+        "email": "dizajnistampa@gmail.com"
+    }],
+    "autoload": {
+        "psr-4": {
+            "App\\": "app/"
+        }
+    },
+    "require": {}
+}
