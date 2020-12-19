@@ -21,7 +21,7 @@
                       <td><?= $student['full_name'] ?></td>   
                       <td><?= $student['sb_name'] ?></td>
                       <td><?= $student['created_at'] ?></td>
-                      <td><button type="button" class="btn btn-primary">Student</button></td>
+                      <td> <a class="btn btn-primary" href="/students/<?php echo $student['student_id'] ?>" role="button">Student</a> </td>
                     </tr>
           <?php  } ?>
           </tbody>
