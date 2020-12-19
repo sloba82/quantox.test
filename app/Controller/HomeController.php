@@ -8,7 +8,7 @@ class HomeController extends Controller {
 
     public function index()
     {
-        $data = 'Hello From homepage';
+        $data = 'Hello Students';
         $this->createView('index', $data);
     }
 
