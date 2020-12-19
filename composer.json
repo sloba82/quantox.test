@@ -9,5 +9,8 @@
             "App\\": "app/"
         }
     },
-    "require": {}
+    "require": {
+        "ext-simplexml": "*",
+        "ext-json": "*"
+    }
 }
